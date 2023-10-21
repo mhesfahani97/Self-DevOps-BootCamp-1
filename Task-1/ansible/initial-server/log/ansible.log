@@ -1,0 +1,89 @@
+2023-10-21 18:35:50,347 p=29979 u=esi n=ansible | ERROR! the role 'tasks' was not found in /home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/roles:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/roles/tasks/main.yml:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks
+
+The error appears to be in '/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/playbook.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - tasks
+      ^ here
+
+2023-10-21 18:37:29,179 p=30014 u=esi n=ansible | ERROR! the role 'tasks' was not found in /home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/roles:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/roles/tasks/main.yml:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks
+
+The error appears to be in '/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/playbook.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - tasks
+      ^ here
+
+2023-10-21 18:47:43,860 p=30428 u=esi n=ansible | ERROR! the role 'tasks' was not found in /home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/roles:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/roles/tasks/main.yml:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks
+
+The error appears to be in '/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/playbook.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - tasks
+      ^ here
+
+2023-10-21 18:48:20,573 p=30451 u=esi n=ansible | ERROR! the role 'default' was not found in /home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/roles:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/roles/tasks/main.yml:/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks
+
+The error appears to be in '/home/esi/Git/Self-DevOps-BootCamp-1/Task-1/ansible/initial-server/playbooks/playbook.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - default
+      ^ here
+
+2023-10-21 18:50:15,657 p=30532 u=esi n=ansible | PLAY [host initializing] ****************************************************************************************************************************************************
+2023-10-21 18:50:15,666 p=30532 u=esi n=ansible | TASK [Gathering Facts] ******************************************************************************************************************************************************
+2023-10-21 18:50:16,849 p=30532 u=esi n=ansible | fatal: [host-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: root@142.93.234.0: Permission denied (publickey,password).", "unreachable": true}
+2023-10-21 18:50:16,856 p=30532 u=esi n=ansible | fatal: [host-2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: root@167.172.44.1: Permission denied (publickey,password).", "unreachable": true}
+2023-10-21 18:50:16,857 p=30532 u=esi n=ansible | PLAY RECAP ******************************************************************************************************************************************************************
+2023-10-21 18:50:16,857 p=30532 u=esi n=ansible | host-1                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-10-21 18:50:16,857 p=30532 u=esi n=ansible | host-2                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-10-21 18:56:44,545 p=30912 u=esi n=ansible | PLAY [host initializing] ****************************************************************************************************************************************************
+2023-10-21 18:56:44,554 p=30912 u=esi n=ansible | TASK [Gathering Facts] ******************************************************************************************************************************************************
+2023-10-21 18:56:45,613 p=30912 u=esi n=ansible | fatal: [host-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '165.232.86.48' (ED25519) to the list of known hosts.\r\nroot@165.232.86.48: Permission denied (publickey,password).", "unreachable": true}
+2023-10-21 18:56:45,674 p=30912 u=esi n=ansible | fatal: [host-2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '157.245.77.36' (ED25519) to the list of known hosts.\r\nroot@157.245.77.36: Permission denied (publickey,password).", "unreachable": true}
+2023-10-21 18:56:45,676 p=30912 u=esi n=ansible | PLAY RECAP ******************************************************************************************************************************************************************
+2023-10-21 18:56:45,676 p=30912 u=esi n=ansible | host-1                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-10-21 18:56:45,676 p=30912 u=esi n=ansible | host-2                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-10-21 18:57:13,037 p=30925 u=esi n=ansible | PLAY [host initializing] ****************************************************************************************************************************************************
+2023-10-21 18:57:13,047 p=30925 u=esi n=ansible | TASK [Gathering Facts] ******************************************************************************************************************************************************
+2023-10-21 18:57:24,647 p=30925 u=esi n=ansible | ok: [host-1]
+2023-10-21 18:57:26,962 p=30925 u=esi n=ansible | ok: [host-2]
+2023-10-21 18:57:26,998 p=30925 u=esi n=ansible | TASK [default : Upgrade the OS] *********************************************************************************************************************************************
+2023-10-21 18:59:39,713 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:00:11,697 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:00:11,704 p=30925 u=esi n=ansible | TASK [default : Install aptitude] *******************************************************************************************************************************************
+2023-10-21 19:00:40,433 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:00:44,919 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:00:44,928 p=30925 u=esi n=ansible | TASK [default : Setup passwordless sudo] ************************************************************************************************************************************
+2023-10-21 19:00:50,300 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:00:50,381 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:00:50,393 p=30925 u=esi n=ansible | TASK [default : Created a new regular user with sudo privileges] ************************************************************************************************************
+2023-10-21 19:00:56,327 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:00:57,046 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:00:57,056 p=30925 u=esi n=ansible | TASK [default : Set authorized key for remote user] *************************************************************************************************************************
+2023-10-21 19:01:03,319 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:01:03,432 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:01:03,442 p=30925 u=esi n=ansible | TASK [default : Disable password authentication for root] *******************************************************************************************************************
+2023-10-21 19:01:08,492 p=30925 u=esi n=ansible | changed: [host-2]
+2023-10-21 19:01:08,512 p=30925 u=esi n=ansible | changed: [host-1]
+2023-10-21 19:01:08,526 p=30925 u=esi n=ansible | TASK [default : Update apt and install sth] *********************************************************************************************************************************
+2023-10-21 19:01:22,842 p=30925 u=esi n=ansible | ok: [host-1]
+2023-10-21 19:01:24,344 p=30925 u=esi n=ansible | ok: [host-2]
+2023-10-21 19:01:24,364 p=30925 u=esi n=ansible | TASK [default : Unconditionally reboot the machine with all defaults] *******************************************************************************************************
+2023-10-21 19:08:03,309 p=31838 u=esi n=ansible |   hosts (2):
+2023-10-21 19:08:03,309 p=31838 u=esi n=ansible |     host-1
+2023-10-21 19:08:03,309 p=31838 u=esi n=ansible |     host-2
+2023-10-21 19:09:13,810 p=30925 u=esi n=ansible |  [ERROR]: User interrupted execution
+
