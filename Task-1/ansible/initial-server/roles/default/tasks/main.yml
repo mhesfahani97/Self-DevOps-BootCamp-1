@@ -3,6 +3,9 @@
     update_cache: true  
     upgrade: full
 
+- name: Unconditionally reboot the machine with all defaults
+  ansible.builtin.reboot:
+
 - name: Install aptitude
   apt:
     name: aptitude
@@ -46,6 +49,3 @@
       - git
     state: latest
     update_cache: true
-
-- name: Unconditionally reboot the machine with all defaults
-  ansible.builtin.reboot:
