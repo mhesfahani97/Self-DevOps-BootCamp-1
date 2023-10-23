@@ -16,3 +16,5 @@
     - insert the server password
 
 4. install docker on hosts
+    - go to ansible/docker-installation/configs
+    - run `ansible-playbook ../playbooks/playbook.yml`

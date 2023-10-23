@@ -1,0 +1,5 @@
+---
+- name: docker installation
+  hosts: all
+  roles:
+    - default

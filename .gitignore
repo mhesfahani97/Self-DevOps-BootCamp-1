@@ -1,1 +1,2 @@
-Task-1/ansible/initial-server/log/*.log
+./Task-1/ansible/initial-server/log/
+./Task-1/ansible/docker-installation/log
