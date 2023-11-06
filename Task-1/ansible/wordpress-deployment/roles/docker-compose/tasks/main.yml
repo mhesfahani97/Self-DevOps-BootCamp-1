@@ -1,0 +1,20 @@
+- name: Copy docker-compose File
+  template: 
+    src: "files/main.yml"
+    dest: "/home/{{ admin_user }}/wordpress/"
+
+- name: Copy environment varialbes
+  template: 
+    src: "files/.env"
+    dest: "/home/{{ admin_user }}/wordpress/"
+
+      
+- name: Set Permission for Docker Daemon
+  file:
+    path: /var/run/docker.sock
+    mode: '0770'
+
+- name: Docker Compose up
+  shell:
+    chdir: "/home/{{ admin_user }}/wordpress/"
+    cmd: docker compose -f main.yml up -d

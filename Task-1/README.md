@@ -18,3 +18,9 @@
 4. install docker on hosts
     - go to ansible/docker-installation/configs
     - run `ansible-playbook ../playbooks/playbook.yml`
+
+# deploy wordpress
+
+1. deploy wordpress
+    - go to ansible/wordpress-deployment/configs
+    - run `ansible-playbook ../playbooks/playbook.yml`
