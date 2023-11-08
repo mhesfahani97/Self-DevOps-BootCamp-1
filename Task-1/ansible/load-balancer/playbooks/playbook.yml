@@ -1,0 +1,5 @@
+---
+- name: load balancing
+  hosts: lb
+  roles:
+    - haproxy
