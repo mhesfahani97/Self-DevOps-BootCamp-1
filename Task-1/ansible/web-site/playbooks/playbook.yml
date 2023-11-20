@@ -1,0 +1,7 @@
+---
+- name: wordpress deployment
+  hosts: web
+  roles:
+    - docker-installation
+    - wordpress-deployment
+    - load-balancer

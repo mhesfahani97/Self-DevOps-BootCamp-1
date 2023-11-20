@@ -1,0 +1,152 @@
+version: "3.8"
+
+services: 
+
+  mariadb1:
+    container_name: mariadb1
+    image: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data1:/var/lib/mysql
+      - ./mariadb1/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - wpsite
+
+  mariadb2:
+    container_name: mariadb2
+    image: mariadb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb-data2:/var/lib/mysql
+      - ./mariadb2/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - wpsite
+
+  mariadb3:
+    container_name: mariadb3
+    image: mariadb
+    ports: 
+      - "3308:3306"
+    volumes:
+      - mariadb-data3:/var/lib/mysql
+      - ./mariadb3/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - wpsite
+
+  wp1:
+    depends_on: 
+      - mariadb1
+      - mariadb2
+      - mariadb3
+    container_name: wordpress1
+    image: wordpress
+    restart: always
+    ports:
+      - '8001:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wpsite
+
+  wp2:
+    depends_on: 
+      - mariadb1
+      - mariadb2
+      - mariadb3
+    container_name: wordpress2
+    image: wordpress
+    restart: always
+    ports:
+      - '8002:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wpsite
+
+  wp3:
+    depends_on: 
+      - mariadb1
+      - mariadb2
+      - mariadb3
+    container_name: wordpress3
+    image: wordpress
+    restart: always
+    ports:
+      - '8003:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wpsite
+
+  proxysql:
+    depends_on: 
+      - mariadb1
+      - mariadb2
+      - mariadb3
+    image: proxysql/proxysql
+    container_name: proxysql
+    ports:
+      - "6032:6032"
+      - "6070:6070"
+      - "6080:6080"
+    cap_add:
+      - all
+    networks:
+      - wpsite
+
+networks:
+  wpsite:
+    driver: bridge
+  
+volumes: 
+  wp-data: 
+  mariadb-data1:
+  mariadb-data2:
+  mariadb-data3:
