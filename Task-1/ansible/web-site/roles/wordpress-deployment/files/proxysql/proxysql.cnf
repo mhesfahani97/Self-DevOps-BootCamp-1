@@ -1,83 +1,46 @@
-# proxysql.cnf
-
-# ProxySQL Admin Variables
 admin_variables=
 {
-  admin_credentials = "admin:adminadmin"
+  admin_credentials = "esi:hello"
   mysql_ifaces="0.0.0.0:6032;/tmp/proxysql.sock"
   refresh_interval=2000
 }
 
-# MySQL Monitor
 mysql_variables=
 {
   monitor_username="monitor"
-  monitor_password="monitoradmin"
+  monitor_password="hello"
   monitor_history=600000
-  monitor_connect_interval=300000
-  monitor_ping_interval=300000
+  monitor_connect_interval=60000
+  monitor_ping_interval=8000
   monitor_read_only_interval=1500
-  monitor_read_only_timeout=300
+  monitor_read_only_timeout=500
+
   ping_interval_server_msec=120000
   ping_timeout_server=500
-  ping_interval_msec=60000
-  ping_timeout=500
+
   commands_stats=true
   sessions_sort=true
-  threads=4  # Set based on your system's capabilities
-  max_connections=2048  # Adjust based on expected connections
+  threads=4
+  max_connections=2048
   default_query_delay=0
-  default_query_timeout=36000000  # 10 hours (adjust as needed)
+  default_query_timeout=36000000
   have_compress=true
 }
 
-# Galera Cluster Nodes
 mysql_servers =
 (
-  { address="mariadb1", port=3306, hostgroup=10 },
-  { address="mariadb2", port=3306, hostgroup=10 },
-  { address="mariadb3", port=3306, hostgroup=10 }
+  { hostname="mariadb1", port=3306, hostgroup_id=2 },
+  { hostname="mariadb2", port=3306, hostgroup_id=2 },
+  { hostname="mariadb3", port=3306, hostgroup_id=2 }
 )
 
-# WordPress Nodes
-mysql_servers =
-(
-  { address="wordpress1", port=3306, hostgroup=20 },
-  { address="wordpress2", port=3306, hostgroup=20 },
-  { address="wordpress3", port=3306, hostgroup=20 }
-)
-
-# Galera Cluster Configuration
 mysql_galera_hostgroups =
 (
-  { hostgroup=10, active=1, writer_is_also_reader=1, max_writers=1, max_transactions_behind=30, comment="Galera Cluster" }
+  { writer_hostgroup=2, backup_writer_hostgroup=4, reader_hostgroup=3, offline_hostgroup=1, active=1, writer_is_also_reader=1, max_writers=3, max_transactions_behind=100, comment="Galera Cluster" }
 )
 
-# WordPress Configuration
-mysql_galera_hostgroups =
+mysql_users=
 (
-  { hostgroup=20, active=1, writer_is_also_reader=1, max_writers=1, max_transactions_behind=30, comment="WordPress" }
-)
-
-# Query Rules
-mysql_query_rules =
-(
-  # Route WordPress traffic to hostgroup 20
-  { rule_id=1, active=1, match_pattern="^SELECT .* FOR UPDATE$", destination_hostgroup=20, apply=1 },
-  { rule_id=2, active=1, match_pattern="^SELECT", destination_hostgroup=20, apply=1 },
-  { rule_id=3, active=1, match_pattern="^UPDATE", destination_hostgroup=20, apply=1 },
-  { rule_id=4, active=1, match_pattern="^DELETE", destination_hostgroup=20, apply=1 },
-  { rule_id=5, active=1, match_pattern="^INSERT", destination_hostgroup=20, apply=1 },
-
-  # Route other traffic to Galera hostgroup 10
-  { rule_id=6, active=1, match_pattern="^.*$", destination_hostgroup=10, apply=1 }
-)
-
-# Galera Healthcheck
-mysql_servers =
-(
-  { address="mariadb1", port=3306, hostgroup=10, max_connections=100, max_replication_lag=5 },
-  { address="mariadb2", port=3306, hostgroup=10, max_connections=100, max_replication_lag=5 },
-  { address="mariadb3", port=3306, hostgroup=10, max_connections=100, max_replication_lag=5 }
+  { username="playground", password="hello", default_hostgroup=2 }
 )
 

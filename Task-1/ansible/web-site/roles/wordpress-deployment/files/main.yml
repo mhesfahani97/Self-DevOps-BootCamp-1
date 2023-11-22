@@ -4,12 +4,13 @@ services:
 
   mariadb1:
     container_name: mariadb1
-    image: mariadb
+    image: mariadb:10.5
     ports:
       - "3306:3306"
     volumes:
       - mariadb-data1:/var/lib/mysql
       - ./mariadb1/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
     cap_add:
       - all
     restart: always
@@ -24,12 +25,13 @@ services:
 
   mariadb2:
     container_name: mariadb2
-    image: mariadb
+    image: mariadb:10.5
     ports:
       - "3307:3306"
     volumes:
       - mariadb-data2:/var/lib/mysql
       - ./mariadb2/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
     cap_add:
       - all
     restart: always
@@ -44,12 +46,13 @@ services:
 
   mariadb3:
     container_name: mariadb3
-    image: mariadb
+    image: mariadb:10.5
     ports: 
       - "3308:3306"
     volumes:
       - mariadb-data3:/var/lib/mysql
       - ./mariadb3/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
     cap_add:
       - all
     restart: always
@@ -64,9 +67,7 @@ services:
 
   wp1:
     depends_on: 
-      - mariadb1
-      - mariadb2
-      - mariadb3
+      - proxysql
     container_name: wordpress1
     image: wordpress
     restart: always
@@ -85,9 +86,7 @@ services:
 
   wp2:
     depends_on: 
-      - mariadb1
-      - mariadb2
-      - mariadb3
+      - proxysql
     container_name: wordpress2
     image: wordpress
     restart: always
@@ -106,9 +105,7 @@ services:
 
   wp3:
     depends_on: 
-      - mariadb1
-      - mariadb2
-      - mariadb3
+      - proxysql
     container_name: wordpress3
     image: wordpress
     restart: always
@@ -130,12 +127,15 @@ services:
       - mariadb1
       - mariadb2
       - mariadb3
-    image: proxysql/proxysql
+    image: proxysql/proxysql:latest
     container_name: proxysql
     ports:
       - "6032:6032"
+      - "6033:6033"
       - "6070:6070"
       - "6080:6080"
+    volumes:
+    - ./proxysql/proxysql.cnf:/etc/proxysql.cnf
     cap_add:
       - all
     networks:
