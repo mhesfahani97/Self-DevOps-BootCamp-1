@@ -11,11 +11,11 @@
     - `git clone https://github.com/mhesfahani97/Self-DevOps-BootCamp-1.git`
 
 4. insert the public IPs of droplets
-    - `vim Task-1/ansible/inventory/hosts.ini
+    - `vim Task-1/ansible/inventory/hosts.ini`
     - save it
 
 5. insert the private or public IP of host-2
-    - `vim Task-1/ansible/roles/role-5-setup-load-balancer/vars/main.yml
+    - `vim Task-1/ansible/roles/role-5-setup-load-balancer/vars/main.yml`
     - save it
 
 6. go to config folder
