@@ -1,0 +1,75 @@
+version: "3.8"
+
+services: 
+
+  mariadb1:
+    container_name: mariadb1
+    image: mariadb:10.5
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data1:/var/lib/mysql
+      - ./mariadb1/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - mariadb-network
+
+  mariadb2:
+    container_name: mariadb2
+    image: mariadb:10.5
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb-data2:/var/lib/mysql
+      - ./mariadb2/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - mariadb-network
+
+  mariadb3:
+    container_name: mariadb3
+    image: mariadb:10.5
+    ports: 
+      - "3308:3306"
+    volumes:
+      - mariadb-data3:/var/lib/mysql
+      - ./mariadb3/galera.cnf:/etc/mysql/mariadb.conf.d/galera.cnf
+      - ./users:/docker-entrypoint-initdb.d
+    cap_add:
+      - all
+    restart: always
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+    networks:
+      - mariadb-network
+
+networks:
+  mariadb-network:
+    driver: bridge
+  
+volumes: 
+  mariadb-data1:
+  mariadb-data2:
+  mariadb-data3:

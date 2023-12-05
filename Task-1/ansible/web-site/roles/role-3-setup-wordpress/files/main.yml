@@ -1,0 +1,62 @@
+version: "3.8"
+
+services: 
+
+  wp1:
+    container_name: wordpress1
+    image: wordpress
+    restart: always
+    ports:
+      - '8001:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wordpress-network
+
+  wp2:
+    container_name: wordpress2
+    image: wordpress
+    restart: always
+    ports:
+      - '8002:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wordpress-network
+
+  wp3:
+    container_name: wordpress3
+    image: wordpress
+    restart: always
+    ports:
+      - '8003:80'
+    volumes:
+      - wp-data:/var/www/html
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+      WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+      WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+    networks:
+      - wordpress-network
+
+networks:
+  wordpress-network:
+    name: files_mariadb-network
+    external: true
+
+volumes: 
+  wp-data: 

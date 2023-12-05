@@ -1,0 +1,23 @@
+version: "3.8"
+
+services: 
+
+  proxysql:
+    image: proxysql/proxysql:latest
+    container_name: proxysql
+    ports:
+      - "6032:6032"
+      - "6033:6033"
+      - "6070:6070"
+      - "6080:6080"
+    volumes:
+    - ./proxysql/proxysql.cnf:/etc/proxysql.cnf
+    cap_add:
+      - all
+    networks:
+      - proxysql-network
+
+networks:
+  proxysql-network:
+    name: files_mariadb-network
+    external: true

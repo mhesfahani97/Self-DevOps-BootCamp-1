@@ -9,13 +9,11 @@
 
 - name: "Copy the HAProyx Config files 1"
   template:
-    src: "files/haproxy2.cfg.j2"
+    src: "templates/haproxy2.cfg.j2"
     dest: "/etc/haproxy/haproxy.cfg"
     mode: 0644
 
 - name: Start the HAProxy Service
   service:
     name: "haproxy"
-    state: started
-
-
+    state: reloaded
