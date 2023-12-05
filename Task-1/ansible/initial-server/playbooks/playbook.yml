@@ -1,7 +1,0 @@
----
-- name: host initializing
-  hosts: all
-  roles:
-    - default
-  vars:
-    created_username: esi

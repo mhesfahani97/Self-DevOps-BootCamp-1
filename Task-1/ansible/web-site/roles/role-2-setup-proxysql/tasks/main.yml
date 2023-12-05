@@ -1,9 +1,0 @@
-- name: Copy docker-compose File
-  copy: 
-    src: "files"
-    dest: "/home/{{ admin_user }}/wordpress/proxysql"
-
-- name: Docker Compose up
-  shell:
-    chdir: "/home/{{ admin_user }}/wordpress/proxysql/files/"
-    cmd: docker compose -f main.yml up -d

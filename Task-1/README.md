@@ -1,26 +1,25 @@
-# Prerequisites
+1. create two digitalocean(or any cloud provider you want!) droplets as hosts
+    - host-1 
+    - host-2
 
-1. create two digitalocean droplets as hosts
-    - host-1 as load balancer
-    - host-2 as wordpress and database
-
-2. use your laptop as client
+2. use your laptop as client(or any thing else as client that you want!)
     - [install](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)ansible
     - install SSHPass
-        ` sudo apt-get install sshpass`
+        `sudo apt-get install sshpass`
 
-3. initial the hosts 
-    - go to ansible/initial-server/configs
-    - run `ansible all --list-hosts` to see host file is correct or not
-    - run `ansible-playbook ../playbooks/playbook.yml -k`
-    - insert the server password
+3. clone the project
+    - `git clone https://github.com/mhesfahani97/Self-DevOps-BootCamp-1.git`
 
-4. install docker on hosts
-    - go to ansible/docker-installation/configs
-    - run `ansible-playbook ../playbooks/playbook.yml`
+4. insert the public IPs of droplets
+    - `vim Task-1/ansible/inventory/hosts.ini
+    - save it
 
-# deploy wordpress
+5. insert the private or public IP of host-2
+    - `vim Task-1/ansible/roles/role-5-setup-load-balancer/vars/main.yml
+    - save it
 
-1. deploy wordpress
-    - go to ansible/wordpress-deployment/configs
-    - run `ansible-playbook ../playbooks/playbook.yml`
+6. go to config folder
+    - `cd Task-1/ansible/configs` 
+
+7. run the ansible command
+    - `ansible-playbook ../playbooks/playbook.yml -k`

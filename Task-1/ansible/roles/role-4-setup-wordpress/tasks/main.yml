@@ -1,0 +1,9 @@
+- name: Copy Docker-Compose File
+  copy: 
+    src: "files"
+    dest: "/home/{{ admin_user }}/wordpress/wordpress"
+
+- name: Docker Compose Up
+  shell:
+    chdir: "/home/{{ admin_user }}/wordpress/wordpress/files/"
+    cmd: docker compose -f main.yml up -d
