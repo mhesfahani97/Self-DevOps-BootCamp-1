@@ -1,0 +1,12 @@
+- name: copy multiple items
+  copy: 
+    src: "{{ item.src }}" 
+    dest: "{{ item.dest }}"
+  loop:
+      - { src: 'docker-compose-proxysql.yml' , dest: '/opt/docker-compose/wordpress/proxysql/'}
+      - { src: 'proxysql.cnf' , dest: '/opt/docker-compose/wordpress/proxysql/'}
+
+- name: deploy Docker Compose stack
+  docker_compose:
+    project_src: '/opt/docker-compose/wordpress/proxysql/'
+    files: docker-compose-proxysql.yml

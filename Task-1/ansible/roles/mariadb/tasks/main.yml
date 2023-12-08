@@ -1,0 +1,18 @@
+- name: copy multiple items
+  copy: 
+    src: "{{ item.src }}" 
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: "files" , dest: "/opt/docker-compose/wordpress/mariadb" }
+    - { src: "docker-compose-mariadb.yml" , dest: "/opt/docker-compose/wordpress/mariadb" }
+    
+- name: Set Permission for Docker Daemon
+  file:
+    path: /var/run/docker.sock
+    mode: '0770'
+
+- name: deploy Docker Compose stack
+  community.docker.docker_compose:
+    project_src: '/opt/docker-compose/wordpress/mariadb/files'
+    files: 
+    - 'docker-compose-mariadb.yml'
