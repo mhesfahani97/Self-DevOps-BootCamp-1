@@ -1,13 +1,6 @@
 - name: Install Required System Packages
   apt:
-    pkg:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - software-properties-common
-      - python3-pip
-      - virtualenv
-      - python3-setuptools
+    name: "{{ prerequirements}}"
     state: latest
     update_cache: true
 
@@ -18,20 +11,18 @@
 
 - name: Add Docker Repository
   apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu jammy stable
+    repo: "deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release  }} stable"
     state: present
 
 - name: Install Docker
   apt:
-    name:
-      - docker-ce
-      - docker-compose-plugin
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
+    name: "{{docker}}"
     state: latest
     update_cache: true
 
 - name: Install Docker Module for Python
   pip:
-    name: docker
+    name: "{{item}}"
+  loop:
+    - docker 
+    - docker-compose 

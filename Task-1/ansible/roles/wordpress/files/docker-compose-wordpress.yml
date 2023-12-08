@@ -1,13 +1,12 @@
 version: "3.8"
 
-services: 
-
+services:
   wp1:
     container_name: wordpress1
-    image: wordpress
+    image: docker.arvancloud.ir/wordpress
     restart: always
     ports:
-      - '8001:80'
+      - "8001:80"
     volumes:
       - wp-data:/var/www/html
     env_file: .env
@@ -21,10 +20,10 @@ services:
 
   wp2:
     container_name: wordpress2
-    image: wordpress
+    image: docker.arvancloud.ir/wordpress
     restart: always
     ports:
-      - '8002:80'
+      - "8002:80"
     volumes:
       - wp-data:/var/www/html
     env_file: .env
@@ -38,10 +37,10 @@ services:
 
   wp3:
     container_name: wordpress3
-    image: wordpress
+    image: registry.docker.ir/wordpress
     restart: always
     ports:
-      - '8003:80'
+      - "8003:80"
     volumes:
       - wp-data:/var/www/html
     env_file: .env
@@ -58,5 +57,5 @@ networks:
     name: files_mariadb-network
     external: true
 
-volumes: 
-  wp-data: 
+volumes:
+  wp-data:

@@ -1,0 +1,14 @@
+- name: copy multiple items
+  copy: 
+    src: "{{ item.src }}" 
+    dest: "{{ item.dest }}"
+  loop:
+      - src: docker-compose-wordpress.yml
+        dest: /opt/docker-compose/wordpress
+      - src: .env
+        dest: /opt/docker-compose/wordpress
+
+- name: deploy Docker Compose stack
+  community.docker.docker_compose:
+    project_src: /opt/docker-compose/wordpress/
+    files: docker-compose-wordpress.yml

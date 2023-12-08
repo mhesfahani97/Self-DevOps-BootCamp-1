@@ -1,9 +1,8 @@
 version: "3.8"
 
-services: 
-
+services:
   proxysql:
-    image: proxysql/proxysql:latest
+    image: registry.docker.ir/proxysql/proxysql:latest
     container_name: proxysql
     ports:
       - "6032:6032"
@@ -11,12 +10,11 @@ services:
       - "6070:6070"
       - "6080:6080"
     volumes:
-    - ./proxysql/proxysql.cnf:/etc/proxysql.cnf
+      - ./proxysql.cnf:/etc/proxysql.cnf
     cap_add:
       - all
     networks:
       - proxysql-network
-
 networks:
   proxysql-network:
     name: files_mariadb-network

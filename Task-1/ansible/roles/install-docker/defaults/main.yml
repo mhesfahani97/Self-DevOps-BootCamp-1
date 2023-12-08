@@ -1,0 +1,14 @@
+prerequirements: 
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+docker: 
+      - docker-ce
+      - docker-compose-plugin
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin      
