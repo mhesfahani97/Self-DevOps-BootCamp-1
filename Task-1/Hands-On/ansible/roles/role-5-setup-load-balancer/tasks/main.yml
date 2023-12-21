@@ -1,0 +1,19 @@
+- name: Update Cache
+  apt:
+    update_cache: yes
+
+- name: Installing Haproxy
+  package:
+    name: "haproxy"
+    state: present
+
+- name: "Copy the HAProyx Config files 1"
+  template:
+    src: "templates/haproxy2.cfg.j2"
+    dest: "/etc/haproxy/haproxy.cfg"
+    mode: 0644
+
+- name: Start the HAProxy Service
+  service:
+    name: "haproxy"
+    state: reloaded

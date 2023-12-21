@@ -1,0 +1,35 @@
+---
+- name: Server Initializing
+  hosts: all
+  gather_facts: true
+  vars:
+    created_username: esi
+    ansible_user: root
+    sudo_user: root
+    remote_user: root
+  roles:
+    - role-0-initial-server
+
+- name: Wordpress Deploying
+  hosts: web
+  gather_facts: true
+  vars:
+    admin_user: esi
+    ansible_user: esi
+    sudo_user: esi
+    remote_user: esi
+  roles:
+    - role-1-install-docker
+    - role-2-setup-mariadb
+    - role-3-setup-proxysql
+    - role-4-setup-wordpress
+
+- name: Load Balancing
+  hosts: lb
+  gather_facts: true
+  vars:
+    ansible_user: esi
+    sudo_user: esi
+    remote_user: esi
+  roles:
+    - role-5-setup-load-balancer

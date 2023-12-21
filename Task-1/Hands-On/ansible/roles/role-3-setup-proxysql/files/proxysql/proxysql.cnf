@@ -1,0 +1,46 @@
+admin_variables=
+{
+  admin_credentials = "esi:hello"
+  mysql_ifaces="0.0.0.0:6032;/tmp/proxysql.sock"
+  refresh_interval=2000
+}
+
+mysql_variables=
+{
+  monitor_username="monitor"
+  monitor_password="hello"
+  monitor_history=600000
+  monitor_connect_interval=60000
+  monitor_ping_interval=8000
+  monitor_read_only_interval=1500
+  monitor_read_only_timeout=500
+
+  ping_interval_server_msec=120000
+  ping_timeout_server=500
+
+  commands_stats=true
+  sessions_sort=true
+  threads=4
+  max_connections=2048
+  default_query_delay=0
+  default_query_timeout=36000000
+  have_compress=true
+}
+
+mysql_servers =
+(
+  { hostname="mariadb1", port=3306, hostgroup_id=2 },
+  { hostname="mariadb2", port=3306, hostgroup_id=2 },
+  { hostname="mariadb3", port=3306, hostgroup_id=2 }
+)
+
+mysql_galera_hostgroups =
+(
+  { writer_hostgroup=2, backup_writer_hostgroup=4, reader_hostgroup=3, offline_hostgroup=1, active=1, writer_is_also_reader=1, max_writers=3, max_transactions_behind=100, comment="Galera Cluster" }
+)
+
+mysql_users=
+(
+  { username="playground", password="hello", default_hostgroup=2 }
+)
+

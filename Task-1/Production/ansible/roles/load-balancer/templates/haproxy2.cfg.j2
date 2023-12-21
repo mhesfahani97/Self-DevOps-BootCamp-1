@@ -1,0 +1,11 @@
+{% include "haproxy1.cfg.j2" %}
+
+frontend http-in
+    bind *:80
+    default_backend wordpress-backend
+
+backend wordpress-backend
+    balance roundrobin 
+{% for port in backend_port %}
+    server {{ backend_hostname }}-{{ loop.index }} {{ backend_ip_address }}:{{ port }} check 
+{% endfor %}
