@@ -10,5 +10,15 @@
 ## Task Designer
 - [Mahdi-Bahrami](https://www.linkedin.com/in/mahdibahrami/)
 
-# Task2:
+# Task2: Docker + GitLab + Kubernetes
+- Containerizing language-specific applications   
+- Setting up a development environment   
+- Configuring a CI/CD pipeline   
+- Deploying an application locally using Kubernetes   
 
+## Helpful Resources
+- [docker-guide](https://docs.docker.com/guides/get-started/)
+- [gitlab-installation](https://github.com/mhesfahani97/DigiNext-DevOps-BootCamp/tree/main/Task-6)
+
+## Task Designer
+- docker website but with some changes by myself
