@@ -1,4 +1,4 @@
-# Task1: Deploy Wordpress by Ansible
+# Task-1: Deploy WordPress with Ansible
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-1/pics/1.png?raw=true)
 
 ## Helpful Resources
