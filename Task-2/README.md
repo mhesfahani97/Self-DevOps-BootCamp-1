@@ -11,6 +11,10 @@
     - create a compose file
 
 5. **Run GitLab CI/CD**
-    - push the python-project to gitlab
-    - create a runner for this project
+    - create a new project in gitlab and clone it to your local host
+    - create a runner
+    - create two environment
+        - dev
+        - prod
     - create a .gitlab-ci.yml file 
+    - push the python-project to gitlab

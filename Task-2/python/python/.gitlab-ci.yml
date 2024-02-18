@@ -32,6 +32,7 @@ deploy-dev:
 
 deploy-prod:
   stage: deploy
+  when: manual
   environment:
     name: prod
   script:
