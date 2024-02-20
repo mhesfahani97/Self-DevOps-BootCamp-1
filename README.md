@@ -20,6 +20,7 @@
 - [docker-guide](https://docs.docker.com/guides/get-started/)
 - [gitlab-installation](https://github.com/mhesfahani97/DigiNext-DevOps-BootCamp/tree/main/Task-6)
 - [create-kubernetes-cluster](https://github.com/mhesfahani97/DigiNext-DevOps-BootCamp/tree/main/Task-5)
+- [be-devops](https://www.youtube.com/watch?v=fwtxi_BRmt0&t=2900s)
 
 ## Task Designer
 - docker website but with some changes by myself

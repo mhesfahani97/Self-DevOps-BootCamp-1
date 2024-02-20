@@ -13,7 +13,7 @@ else:
 
 @app.route('/')
 def hello_world():
-    return 'I love you'
+    return 'I love australia'
 
 
 @app.route('/widgets')

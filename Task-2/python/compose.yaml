@@ -6,7 +6,7 @@ services:
     ports:
       - 8000:5000
     environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+      - POSTGRES_PASSWORD_FILE=$PPF
     depends_on:
       db:
         condition: service_healthy
@@ -26,7 +26,7 @@ services:
       - db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+      - POSTGRES_PASSWORD_FILE=$PPF
     expose:
       - 5432
     healthcheck:
