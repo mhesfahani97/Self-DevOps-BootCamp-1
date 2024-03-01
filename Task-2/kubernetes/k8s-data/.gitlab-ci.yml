@@ -1,6 +1,8 @@
+variables:
+  KUBE_CONTEXT: root/k8s-connection:k8s-connection
+
 stages:
   - build
-  #- test
   - push
   - deploy
 
@@ -11,10 +13,6 @@ build:
   stage: build
   script:
     - docker build --tag="$CI_REGISTRY_IMAGE":"$CI_COMMIT_REF_NAME" .
-
-# test:
-#   stage: test
-#   script:
 
 push:
   stage: push
@@ -39,7 +37,14 @@ deploy-prod:
     name: prod
   tags:
     - prod
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: ['']
   script:
-    - docker compose pull
-    - docker compose down
-    - docker compose up -d
+    - kubectl config use-context $KUBE_CONTEXT
+
+    - kubectl apply -f $CI_PROJECT_DIR/k8s-files/sql-deployment.yml
+    - kubectl get deployment -n py-app -o wide
+
+    - kubectl apply -f $CI_PROJECT_DIR/k8s-files/app-deployment.yml
+    - kubectl get deployment -n py-app -o wide

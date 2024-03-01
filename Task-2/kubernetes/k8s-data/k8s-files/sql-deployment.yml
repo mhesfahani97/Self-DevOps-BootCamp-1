@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sql
+  namespace: py-app
+  labels:
+    app: py-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: py-app
+      tier: sql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: py-app
+        tier: sql
+    spec:
+      containers:
+        - name: sql
+          image: postgres
+          env:
+            - name: POSTGRES_DB
+              value: "example"
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: py-app
+                  key: POSTGRES_PASSWORD
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: py-app
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: py-app
+          persistentVolumeClaim:
+            claimName: py-app

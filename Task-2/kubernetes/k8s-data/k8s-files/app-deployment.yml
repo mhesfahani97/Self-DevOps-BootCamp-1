@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: py-app
+  namespace: py-app
+  labels:
+    app: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: python
+        tier: frontend
+    spec:
+      containers:
+        - name: py-app
+          image: "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}"
+          ports:
+            - containerPort: 5000
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: py-app
+                  key: POSTGRES_PASSWORD

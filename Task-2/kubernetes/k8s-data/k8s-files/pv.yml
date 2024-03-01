@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: py-app
+  name: py-app
+spec:
+  capacity:
+    storage: 1Gi              
+  accessModes:
+    - ReadWriteOnce            
+  persistentVolumeReclaimPolicy: Retain 
+  storageClassName: py-app
+  hostPath:
+    path: /var/data/postgres  
