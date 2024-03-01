@@ -1,7 +1,7 @@
 # Locally
 
 1. **Create DigitalOcean Droplet**
-    - one droplet is enough.
+  - one droplet is enough.
 
 2. **Install Community Eddition Gitlab**
   - add your public ssh key to gitlab (optional but recommended).
