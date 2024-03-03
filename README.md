@@ -27,3 +27,12 @@
 
 ## Task Designer
 - docker website but with some changes by myself
+
+# Task3: Bash Scripting
+
+## Helpful Resources
+- [github-1](https://github.com/Safiakhatoon767/Shell-Scripting-Project)
+- [github-2](https://github.com/ruanyf/simple-bash-scripts)
+
+## Task Designers
+- from github repositories
