@@ -31,3 +31,5 @@ spec:
                 secretKeyRef:
                   name: py-app
                   key: POSTGRES_PASSWORD
+      imagePullSecrets:
+        - name: py-app
