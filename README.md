@@ -1,6 +1,5 @@
 # Task-1: Deploy WordPress with Ansible
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-1/pics/1.png?raw=true)
-
 ## Helpful Resources
 - [Use-ProxySQL-as-a-Load-Balancer-for-MySQL](https://www.digitalocean.com/community/tutorials/how-to-use-proxysql-as-a-load-balancer-for-mysql-on-ubuntu-16-04#step-6-creating-the-mysql-users)
 - [Deploy-Galera-with-MariaDB-&-ProxySQL](https://sesamedisk.com/mysql-cluster-deploy-galera-with-mariadb-proxysql/)
@@ -12,6 +11,7 @@
 
 # Task2: Docker + GitLab + Kubernetes
 ## Kubernetes
+![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-2/pics/task.png?raw=true)
 ## Locally
 - Containerizing a python app.
 - Configuring a CI/CD pipeline.
