@@ -29,7 +29,7 @@
 - docker website but with some changes by myself
 
 # Task3: Bash Scripting
-
+![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-3/pics/bash.jpg?raw=true)
 ## Helpful Resources
 - [github-1](https://github.com/Safiakhatoon767/Shell-Scripting-Project)
 - [github-2](https://github.com/ruanyf/simple-bash-scripts)
