@@ -33,6 +33,7 @@
 ## Helpful Resources
 - [github-1](https://github.com/Safiakhatoon767/Shell-Scripting-Project)
 - [github-2](https://github.com/ruanyf/simple-bash-scripts)
+- [morteza-bashsiz](https://www.youtube.com/playlist?list=PLRMCwJJwWR1A3_ECuOqdIaR-XLnr6bDj_)
 
 ## Task Designers
 - from github repositories

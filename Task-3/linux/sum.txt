@@ -1,0 +1,12 @@
+yes
+no
+yes
+no
+
+hello
+bye
+hello
+bye
+hello
+bye
+    
