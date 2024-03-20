@@ -40,7 +40,10 @@
 - from github repositories
 
 # Task4: Ubuntu Repository Server
-![]()
+![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-4/pic/T4-self-boot.png?raw=true)
 
 ## Helpful Resources
 - [Linux-Techi](https://www.linuxtechi.com/setup-local-apt-repository-server-ubuntu/)
+
+## Task Designers
+- [Pradeep Kumar](https://www.linuxtechi.com/author/pradeep/)
