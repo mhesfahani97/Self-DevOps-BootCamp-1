@@ -18,11 +18,11 @@
   `apt-get install apt-mirror`
 
 5. config apt-mirror
-  - create a backup from config file
-      `cp /etc/apt/mirror.list /etc/apt/mirror.list.backup`
-  - set the package repository directory
-      `set base_path    /var/www/html/ubuntu`
-  - you can see the config file in this project `./mirror.list`
+   - create a backup from config file
+       `cp /etc/apt/mirror.list /etc/apt/mirror.list.backup`
+   - set the package repository directory
+       `set base_path    /var/www/html/ubuntu`
+   - you can see the config file in this project `./mirror.list`
 
 6. start mirroring
   - run this `apt-mirror`
