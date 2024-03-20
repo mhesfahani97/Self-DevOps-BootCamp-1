@@ -46,3 +46,61 @@ sed -n 2,3p test/file3.txt
 sed /^$/d test/file3.txt
 sed /ali/aa man test/file3.txt
 
+#update the /etc/apt/sources.list.save
+apt-get update
+
+#install a new package
+apt-get install <package-name>
+
+#simulate a package
+apt-get install -s <package-name>
+
+#suimulate and download a package
+apt-get install --download-only <package-name>
+
+#just download a package
+apt-get download <package-name>
+
+#remove package and config files
+apt-get purge <package-name>
+
+#Remove automatically all unused packages
+apt-get autoremove <package-name>
+
+#find the <package-name> in /var/cache/apt/archives
+apt-cache search <package-name>
+
+#install a package
+dpkg -i <package-name>
+
+#remove a package and configs of that 
+dpkg -p <package-name>
+
+#you can find all the users
+cat /etc/passwd
+user-name : password : user-id : group-id : description : home-directory : shell(no login or false means not executable)
+
+#the password of users
+sudo cat /etc/shadow
+
+#show the groups
+sudo cat /etc/group
+
+#the groups that a user is a member of
+groups
+
+#add a new group | delete a group | modify a group
+groupadd <group-name>
+groupdel <group-name>
+groupmod <group-name>
+
+#add new user | remove a user | modify a user | switch user | change user password
+useradd <username>
+userdel <username>
+usermod <username>
+su - <username>
+
+#change the file permision
+chmod u+x <file-name>
+chmod100 <file-name>
+

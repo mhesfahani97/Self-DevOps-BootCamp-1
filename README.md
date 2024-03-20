@@ -30,6 +30,7 @@
 
 # Task3: Bash Scripting
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-3/pics/bash.jpg?raw=true)
+
 ## Helpful Resources
 - [github-1](https://github.com/Safiakhatoon767/Shell-Scripting-Project)
 - [github-2](https://github.com/ruanyf/simple-bash-scripts)
@@ -37,3 +38,9 @@
 
 ## Task Designers
 - from github repositories
+
+# Task4: Ubuntu Repository Server
+![]()
+
+## Helpful Resources
+- [Linux-Techi](https://www.linuxtechi.com/setup-local-apt-repository-server-ubuntu/)
