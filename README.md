@@ -32,11 +32,10 @@
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-3/pics/bash.jpg?raw=true)
 
 ## Helpful Resources
-- [amos-koech](https://www.linkedin.com/in/amos-koech-/)
 - [morteza-bashsiz](https://www.youtube.com/playlist?list=PLRMCwJJwWR1A3_ECuOqdIaR-XLnr6bDj_)
 
-## Task Designers
-- from github repositories
+## Task Designer
+- [amos-koech](https://www.linkedin.com/in/amos-koech-/)
 
 # Task4: Ubuntu Repository Server
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-4/pic/T4-self-boot.png?raw=true)
