@@ -35,7 +35,7 @@
 - [morteza-bashsiz](https://www.youtube.com/playlist?list=PLRMCwJJwWR1A3_ECuOqdIaR-XLnr6bDj_)
 
 ## Task Designer
-- [amos-koech](https://www.linkedin.com/in/amos-koech-/)
+- [amos-koech](https://www.linkedin.com/posts/amos-koech-_daily-bash-scripts-for-devops-and-cloud-engineers-activity-7174822589297508353-Xtyc?utm_source=share&utm_medium=member_desktop)
 
 # Task4: Ubuntu Repository Server
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-4/pic/T4-self-boot.png?raw=true)
