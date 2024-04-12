@@ -9,7 +9,7 @@
 ## Task Designer
 - [Mahdi-Bahrami](https://www.linkedin.com/in/mahdibahrami/)
 
-# Task2: Docker + GitLab + Kubernetes
+# Task2: Develop & Deploy Python App
 ## Kubernetes
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-2/pics/task.png?raw=true)
 ## Locally
