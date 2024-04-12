@@ -28,7 +28,7 @@
 ## Task Designer
 - docker website but with some changes by myself
 
-# Task3: Bash Scripting
+# Task3: System Administration Scripts
 ![](https://github.com/mhesfahani97/Self-DevOps-BootCamp-1/blob/main/Task-3/pics/bash.jpg?raw=true)
 
 ## Helpful Resources
